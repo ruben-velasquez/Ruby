@@ -1,11 +1,14 @@
 const { REST, Routes } = require('discord.js');
+const {TOKEN, CLIENT_ID} = require("./config.js")
+const fs = require("node:fs")
 
-const commands = [
-  {
-    name: 'ping',
-    description: 'Replies with Pong!',
-  },
-];
+const commands = [];
+const commandFiles = fs.readdirSync('./Commands').filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+    const command = require(`./Commands/${file}`);
+    commands.push(command.data.toJSON());
+}
 
 const rest = new REST({ version: '10' }).setToken(TOKEN);
 
