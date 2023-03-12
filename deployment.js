@@ -14,12 +14,13 @@ const rest = new REST({ version: '10' }).setToken(TOKEN);
 
 (async () => {
   try {
-    console.log('Started refreshing application (/) commands.');
+    console.log('Enviando los comandos de (/) del bot.');
 
     await rest.put(Routes.applicationCommands(CLIENT_ID), { body: commands });
 
-    console.log('Successfully reloaded application (/) commands.');
+    console.log('Correctamente envidos los comandos de (/) del bot.\n');
   } catch (error) {
+    console.log('Hubo un error enviando los comandos de (/) del bot: \n');
     console.error(error);
   }
 })();

@@ -1,0 +1,29 @@
+{
+  "name": "ruby",
+  "version": "1.0.0",
+  "description": "Un bot de discord.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "nodemon index.js",
+    "deploy": "node deployment.js",
+    "dev": "node deployment.js && nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruben-velasquez/Ruby.git"
+  },
+  "author": "Rubén Velásquez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruben-velasquez/Ruby/issues"
+  },
+  "homepage": "https://github.com/ruben-velasquez/Ruby#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  }
+}

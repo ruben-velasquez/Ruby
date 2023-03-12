@@ -7,7 +7,7 @@ client.commands = require("./commandHandler.js")
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-});
+}); 
 
 client.on(Events.InteractionCreate, async interaction => { 
   if (!interaction.isChatInputCommand()) return; 
@@ -17,7 +17,7 @@ client.on(Events.InteractionCreate, async interaction => {
   if (!command) return; 
   
   try { 
-    await command.execute(interaction); 
+    await command.execute(interaction, client); 
   } catch (error) { 
     console.error(error); 
     if (interaction.replied || interaction.deferred) { 
