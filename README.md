@@ -25,6 +25,7 @@ Estos son los comandos que tiene por el momento:
 
 - `ping`: Comando para probar que el bot funciona correctamente
 - `avatar`: Muestra el avatar de un usuario o de ti mismo
+- `contribute`: Muestra el repositorio para que los interesados en colaborar con el proyecto puedan hacerle fork, clonarlo o enviar pull requests.
 
 ## Contribuir
 

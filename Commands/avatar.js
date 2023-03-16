@@ -1,10 +1,13 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const {
+  SlashCommandBuilder,
+  EmbedBuilder
+} = require('discord.js');
 
 module.exports = {
   data: new SlashCommandBuilder()
   .setName('avatar')
   .setDescription('Muestra tu avatar o el de otro usuario')
-  .addUserOption(option => 
+  .addUserOption(option =>
     option.setName('target')
     .setDescription('El usuario del que quieres ver el avatar')
     .setRequired(false)),
@@ -14,10 +17,16 @@ module.exports = {
     let avatarembed = new EmbedBuilder()
     .setImage(user.avatarURL())
     .setColor("#DF0000")
-    .setAuthor({ name:`${user.username}'s avatar`, iconURL: user.avatarURL() })
-    .setFooter({ text: client.user.username, iconURL: client.user.avatarURL() })
+    .setAuthor({
+      name: `${user.username}'s avatar`, iconURL: user.avatarURL()
+    })
+    .setFooter({
+      text: client.user.username, iconURL: client.user.avatarURL()
+    })
     .setTimestamp()
-    
-    interaction.reply({ content: '', embeds: [avatarembed] })
+
+    interaction.reply({
+      content: '', embeds: [avatarembed]
+    })
   },
 }
